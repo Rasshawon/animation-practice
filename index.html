@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon"  href="./img/logo_animation_tubik_design.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="index.css" />
+    <title>Animation & Parallax Scrolling Effect</title>
+  </head>
+  <body>
+    <!-- Parallax Scrolling Effect -->
+    <section>
+      <img src="./img/bg.jpg" id="bg">
+      <img src="./img/moon.png" id="moon">
+      <img src="./img/mountain.png" id="mountain">
+      <img src="./img/road.png" id="road">
+      <h2 id="text">Night Sky</h2>
+  </section>
+  <script type="text/javascript">
+      let bg = document.getElementById("bg");
+      let moon = document.getElementById("moon");
+      let mountain = document.getElementById("mountain");
+      let road = document.getElementById("road");
+      let text = document.getElementById("text");
+
+      window.addEventListener('scroll', function(){
+          var value = window.scrollY;
+
+          bg.style.top = value * 0.5 + 'px';
+          moon.style.left = -value * 0.5 + 'px';
+          mountain.style.top = -value * 0.15 + 'px';
+          road.style.top = value * 0.15 + 'px';
+          text.style.top = value * 1 + 'px';
+
+
+      })
+
+  </script>
+
+  <!-- animation css -->
+    <!-- tube light animation text -->
+    <h1 contenteditable="true">Creative</h1>
+
+    <!-- animation effect color text -->
+    <h2 class="colored" data-text="Shawon...">Shawon...</h2>
+
+    <!-- text distortion animation -->
+    <h2 class="distortion"><span >W</span>e are in end <span>g</span>ame now</h2>
+    <div class="content">
+        <h2>Water</h2>
+        <h2>Water</h2>
+    </div>
+
+    <!-- Water fill animation -->
+    <div class="box">
+      <div class="element"></div>
+
+    </div>
+
+    <!-- bounce text animation -->
+    <div class="bounce">Bounce</div>
+  </body>
+  <footer>Build by Shawon</footer>
+</html>

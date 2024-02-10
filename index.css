@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 200vh;
+    background-color: #252839;
+
+}
+
+
+/* Parallax Scrolling Effect */
+section{
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+section::before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0a2a43 , transparent );
+    z-index: 10000;
+}
+section::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a2a43 ;
+    z-index: 10000;
+    mix-blend-mode: color;
+}
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+ }
+#text{
+    position: relative;
+    color: white;
+    font-size: 10em;
+    z-index: 1;
+}
+#road{
+    z-index: 2;
+}
+
+
+/* animation css starts */
+
+/* tube light css */
+h1
+{
+    position: relative;
+    font-size: 4vw;
+    color: #4c4f5b;
+    letter-spacing: 10px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0.8em;
+    outline: none;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #222329);
+    animation: animate1 5s linear infinite;
+    
+
+}
+@keyframes animate1 
+{
+    0%,20%,40.1%,50%,60.1%,70%,80.1%,90%
+    {
+        color: rgb(27, 120, 70);
+        text-shadow: none;
+    }
+    20.1%,40%,50.1%,60%,70.1%,80%,90.1%,100%
+    {
+        color:#fff;
+        text-shadow: 0 0 10px greenyellow,
+        0 0 20px greenyellow,
+        0 0 40px greenyellow,
+        0 0 80px greenyellow,
+        0 0 160px greenyellow;
+        
+    }
+}
+
+
+/* colored text css */
+h2.colored{
+    margin-top: 100px;
+    position: relative;
+    font-size: 4vw;
+    color: #252839;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.3vw #383d52;
+    
+}
+h2.colored::before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate2 5s linear infinite;
+
+}
+@keyframes animate2 
+{
+    0%,10%,100%
+    {
+        width: 0%;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+
+
+
+/* text distortion */
+h2.distortion{
+    position: relative;
+    margin-top: 50px;
+    font-size: 3em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+    mix-blend-mode: screen;
+}
+h2.distortion span{
+    color: #ff022c;
+}
+h2.distortion::before
+{
+    content:" ";
+    position: absolute;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent 0%, #000000 5%, #000000 100%);
+    animation: animate3 4s ease-in-out infinite;
+
+}
+
+@keyframes animate3 
+{
+    0%
+    {
+        left: 110%;
+    }
+    100%
+    {
+        left: -20%;
+    }
+}
+
+
+
+/* water wave text */
+.content{
+    margin-top: 120px;
+    position: relative;
+}
+.content h2{
+    position: absolute;
+    color: white;
+    transform: translate(-50%,-50%);
+    font-size: 6em;
+    text-transform: uppercase;
+}
+.content h2:nth-child(1)
+{
+    color: transparent;
+    -webkit-text-stroke: 2px #03a9f4;
+}
+.content h2:nth-child(2)
+{
+    color: #03a9f4;
+    animation: animate4 4s ease-in-out infinite;
+}
+@keyframes animate4
+{       
+    0%,100%
+    {
+        clip-path: polygon(1% 26%, 17% 33%, 34% 43%, 43% 50%, 50% 54%, 60% 56%, 69% 57%, 81% 54%, 94% 47%, 99% 41%, 100% 100%, 0% 100%);
+
+    }   
+    50%
+    {   
+        clip-path: polygon(0% 48%, 13% 57%, 33% 61%, 53% 55%, 61% 48%, 71% 38%, 83% 33%, 98% 30%, 100% 30%, 99% 100%, 0% 100%);
+
+    }
+}
+/* water fill animation css */
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    width: 100%;
+    height: 100%;
+}
+.element{
+    width: 200px;
+    height: 200px;
+    background: rgb(52, 163, 227);
+    border: 6px solid rgb(31, 99, 139);
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.element::before {
+    content:"WATER";
+    font-size-adjust: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+.element::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    transition: scale(1.6);
+    border-radius: 30%;
+    animation: animate5 10s ease-in-out infinite;
+}
+
+@keyframes animate5
+{   
+    0%
+    {
+        transform: translateY(0) rotate(0) scale(1.6);
+    }
+    50%
+    {
+        transform: translateY(-150%) rotate(500deg) scale(1.6);
+
+    }
+    100%
+    {
+        transform: translateY(0) rotate(0) scale(1.6);
+
+    }
+}
+
+/* bounce text animation */
+.bounce{
+    margin-top: 50px;
+    color: greenyellow;
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+
+}
+.bounce:hover{
+    color: orangered;
+    font-size: 55px;
+    font-weight: 600;
+    animation: animate6 2s linear;
+}
+@keyframes animate6 
+{
+    0%,20%,60%,90%
+    {
+        transform: translateY(0);
+    }
+    30%
+    {
+        transform: translateY(-30px);
+
+    }
+    70%
+    {
+        transform: translateY(-15px);
+
+    }
+    100%
+    {
+        transform: translateY(-1px);
+
+    }
+}
+footer{
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    background: rgb(88, 89, 92);
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+}
+
+
+
+
+
+
